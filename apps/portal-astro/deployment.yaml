@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: portal
-        image: astuani/stutech-portal:latest
+        image: astuani/stutech-portal:1f732ad
         ports:
         - containerPort: 80 
