@@ -4,7 +4,7 @@ metadata:
   name: portal-stutech
   namespace: stutech-prod
 spec:
-  replicas: 2 # Para ter alta disponibilidade no seu laboratório
+  replicas: 2
   selector:
     matchLabels:
       app: portal-stutech
@@ -15,20 +15,6 @@ spec:
     spec:
       containers:
       - name: portal
-        image: astuani/stutech-portal:latest # Sua imagem recém-criada!
+        image: astuani/stutech-portal:latest
         ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: portal-stutech-service
-  namespace: stutech-prod
-spec:
-  type: LoadBalancer # Para o MetalLB te dar um IP de acesso
-  selector:
-    app: portal-stutech
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+        - containerPort: 80 

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-stutech-service
+  namespace: stutech-prod
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 192.168.15.205
+spec:
+  type: LoadBalancer
+  selector:
+    app: portal-stutech
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
