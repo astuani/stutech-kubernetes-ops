@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost-cms
+  namespace: stutech-prod
+spec:
+  replicas: 1 # Ghost com banco interno (SQLite) deve ter apenas 1 réplica
+  selector:
+    matchLabels:
+      app: ghost-cms
+  template:
+    metadata:
+      labels:
+        app: ghost-cms
+    spec:
+      containers:
+      - name: ghost
+        image: ghost:5-alpine
+        ports:
+        - containerPort: 2368
+        env:
+        - name: url
+          value: http://192.168.15.208
+        volumeMounts:
+        - name: ghost-data
+          mountPath: /var/lib/ghost/content
+      volumes:
+      - name: ghost-data
+        persistentVolumeClaim:
+          claimName: ghost-content-pvc
