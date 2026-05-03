@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: portal
-        image: astuani/stutech-portal:latest # Sua imagem recém-criada!
+        image: astuani/stutech-portal:1f732ad
         ports:
         - containerPort: 80
 ---
