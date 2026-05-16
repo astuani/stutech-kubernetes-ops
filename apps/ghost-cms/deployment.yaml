@@ -20,7 +20,7 @@ spec:
         - containerPort: 2368
         env:
         - name: url
-          value: http://192.168.15.208
+          value: http://www.stutech.com.br
         # Forçando o Ghost a usar SQLite em vez de MySQL
         - name: database__client
           value: sqlite3
