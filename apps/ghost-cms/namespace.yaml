@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: stutech-prod # O Argo CD vai ler isso e criar o namespace automaticamente
+  name: ghost-prod

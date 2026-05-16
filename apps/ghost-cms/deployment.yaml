@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ghost-cms
-  namespace: stutech-prod
+  namespace: ghost-prod
 spec:
   replicas: 1 # Ghost com banco interno (SQLite) deve ter apenas 1 réplica
   selector:

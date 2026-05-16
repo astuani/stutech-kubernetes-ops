@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ghost-service
-  namespace: stutech-prod
+  namespace: ghost-prod
   annotations:
     metallb.universe.tf/loadBalancerIPs: 192.168.15.208
 spec:
